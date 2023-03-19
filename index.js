@@ -20,6 +20,7 @@ app.post("/create", async(req,res)=>{
             "nama":data.nama,
             "nomorkelompok": data.alamat,
             "id":datadaftar.user.uid
+            "role":"client"
         })
         res.send("Data Berhasil Didaftarkan")
     }).catch(function (error){
