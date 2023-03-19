@@ -15,7 +15,11 @@ app.post("/create", async(req,res)=>{
     await User.auth().createUserWithEmailAndPassword(data.email, data.password).then(async(datadaftar)=>{
         // return res.status(200).json(datadaftar)
         console.log(datadaftar.user.uid)
-        await User.firestore().collection("Pengguna").doc(datadaftar.user.uid).set(data)
+        await User.firestore().collection("Pengguna").doc(datadaftar.user.uid).set({
+            "email":data.email,
+            "nama":data.nama,
+            "nomorkelompok": data.alamat,
+        })
         res.send("Data Berhasil Didaftarkan")
     }).catch(function (error){
         // let errorcode = error.code;
