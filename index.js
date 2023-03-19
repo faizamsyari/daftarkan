@@ -19,6 +19,7 @@ app.post("/create", async(req,res)=>{
             "email":data.email,
             "nama":data.nama,
             "nomorkelompok": data.alamat,
+            "id":datadaftar.user.uid
         })
         res.send("Data Berhasil Didaftarkan")
     }).catch(function (error){
