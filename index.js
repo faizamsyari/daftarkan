@@ -19,6 +19,7 @@ app.post("/create", async(req,res)=>{
             "email":data.email,
             "nama":data.nama,
             "nomorkelompok": data.alamat,
+            "nim":data.nim,
             "id":datadaftar.user.uid,
             "role":data.role
         })
